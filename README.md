@@ -102,6 +102,16 @@ Each request returns an `HttpResponse` object, which can be used to access:
 - `getStatusCode()`: Returns the HTTP status code of the response.
 - `getBody()`: Returns the response body or null if not exists.
 
+## Statuses
+
+Each HTTP status exposes the following methods to accurately classify the nature of the response:
+
+- `isInformational()` (bool): Return if is a Informational status;
+- `isSuccess()` (bool): Return if is a Success status;
+- `isRedirection()` (bool): Return if is a Redirection status;
+- `isClientError()` (bool): Return if is a Client Error status;
+- `isServerError()` (bool): Return if is a Server Error status;
+
 ### Example Usage:
 
 ```php
