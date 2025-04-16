@@ -69,6 +69,10 @@ class HttpRequestFacade
 
     private static function executeRequest(HttpRequest $request): HttpResponse
     {
-        return self::$requestService->execute($request);
+        return (self::$requestService ?? self::makeRequestService())->execute($request);
+    }
+
+    private static function makeRequestService(): RequestService {
+        return new CurlRequestService();
     }
 }
