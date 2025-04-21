@@ -7,12 +7,14 @@ use Wesley0010012\HttpRequest\Enums\RequestTypeEnum;
 class HttpRequest
 {
     public function __construct(
-        private readonly RequestTypeEnum $method = RequestTypeEnum::GET,
-        private readonly string $url,
-        private readonly mixed $body,
-        private readonly array $headers = [],
-        private readonly int $timeout = 30
-    ) {}
+        private RequestTypeEnum $method,
+        private string $url,
+        private mixed $body,
+        private array $headers = [],
+        private int $timeout = 30
+    ) {
+        $this->method = $method ?? RequestTypeEnum::GET();
+    }
 
     public function getMethod(): RequestTypeEnum
     {

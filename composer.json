@@ -3,6 +3,11 @@
   "description": "Simple HttpRequest Interface",
   "type": "library",
   "license": "MIT",
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
   "autoload": {
     "psr-4": {
       "Wesley0010012\\HttpRequest\\": "src/",
