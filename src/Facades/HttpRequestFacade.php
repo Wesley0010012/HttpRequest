@@ -24,7 +24,7 @@ class HttpRequestFacade
         array $headers = [],
         int $timeout = 30
     ): HttpResponse {
-        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::GET, $url, null, $headers, $timeout));
+        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::GET(), $url, null, $headers, $timeout));
     }
 
     public static function post(
@@ -33,7 +33,7 @@ class HttpRequestFacade
         array $headers = [],
         int $timeout = 30
     ): HttpResponse {
-        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::POST, $url, $body, $headers, $timeout));
+        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::POST(), $url, $body, $headers, $timeout));
     }
 
     public static function put(
@@ -42,7 +42,7 @@ class HttpRequestFacade
         array $headers = [],
         int $timeout = 30
     ): HttpResponse {
-        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::PUT, $url, $body, $headers, $timeout));
+        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::PUT(), $url, $body, $headers, $timeout));
     }
 
     public static function patch(
@@ -51,7 +51,7 @@ class HttpRequestFacade
         array $headers = [],
         int $timeout = 30
     ): HttpResponse {
-        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::PATCH, $url, $body, $headers, $timeout));
+        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::PATCH(), $url, $body, $headers, $timeout));
     }
 
     public static function delete(
@@ -59,7 +59,7 @@ class HttpRequestFacade
         array $headers = [],
         int $timeout = 30
     ): HttpResponse {
-        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::DELETE, $url, null, $headers, $timeout));
+        return self::executeRequest(self::makeHttpRequest(RequestTypeEnum::DELETE(), $url, null, $headers, $timeout));
     }
 
     private static function makeHttpRequest(RequestTypeEnum $requestType, string $url, mixed $body, array $headers, int $timeout): HttpRequest

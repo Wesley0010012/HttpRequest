@@ -90,10 +90,10 @@ All request methods follow the same signature:
 HttpRequestFacade::{method}(string $url, mixed $body = null, array $headers = [], int $timeout = 30): HttpResponse
 ```
 
-- `` (*string*): The request URL.
-- `` (*mixed*): The request body, optional for `GET` and `DELETE`.
-- `` (*array*): HTTP headers.
-- `` (*int*): Request timeout in seconds (default: `30`).
+-  (*string*)`: The request URL.
+- `(*mixed*)`: The request body, optional for `GET` and `DELETE`.
+- `(*array*)`: HTTP headers.
+- `(*int*)`: Request timeout in seconds (default: `30`).
 
 ## Response
 

@@ -27,7 +27,7 @@ class CurlRequestService implements RequestService
             curl_setopt($ch, CURLOPT_HTTPHEADER, $formattedHeaders);
         }
 
-        if (in_array($request->getMethod(), [RequestTypeEnum::POST, RequestTypeEnum::PUT, RequestTypeEnum::PATCH]) && !empty($request->getBody())) {
+        if (in_array($request->getMethod(), [RequestTypeEnum::POST(), RequestTypeEnum::PUT(), RequestTypeEnum::PATCH()]) && !empty($request->getBody())) {
             curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($request->getBody()) ? json_encode($request->getBody()) : $request->getBody());
         }
 
