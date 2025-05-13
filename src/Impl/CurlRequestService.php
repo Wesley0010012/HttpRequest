@@ -19,9 +19,9 @@ class CurlRequestService implements RequestService
         curl_setopt($ch, CURLOPT_TIMEOUT, $request->getTimeout());
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $request->getMethod()->value);
 
-        if (!empty($headers)) {
+        if (!empty($request->getHeaders())) {
             $formattedHeaders = [];
-            foreach ($headers as $key => $value) {
+            foreach ($request->getHeaders() as $key => $value) {
                 $formattedHeaders[] = "$key: $value";
             }
             curl_setopt($ch, CURLOPT_HTTPHEADER, $formattedHeaders);
